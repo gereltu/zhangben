@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- 记录类型选择 -->
+  <view class="input-group">
+    <picker mode="selector" range="{{['支出', '收入']}}" bindchange="selectRecordType">
+      <view class="picker">
+       收支: {{recordType ? recordType : '请选择'}}
+      </view>
+    </picker>
+  </view>
+  <!-- 添加消费记录 -->
+  <view class="add-record" wx:if="{{recordType === '支出'}}">
+    <view class="title">添加消费记录</view>
+    <view class="input-group">
+      <input 
+        placeholder="请输入金额" 
+        value="{{amount}}" 
+        bindinput="inputAmount" 
+      />
+    </view>
+    <view class="input-group">
+      <picker mode="selector" range="{{listType}}" range-key="type" bindchange="selectType">
+        <view class="picker">
+          {{selectedType ? selectedType.type : '请选择'}}
+        </view>
+      </picker>
+    </view>
+    <button bindtap="addRecord">添加记录</button>
+  </view>
+
+  <!-- 添加收入记录 -->
+  <view class="add-record" wx:if="{{recordType === '收入'}}">
+    <view class="title">添加收入记录</view>
+    <view class="input-group">
+      <input 
+        placeholder="请输入金额" 
+        value="{{amount}}" 
+        bindinput="inputAmount" 
+      />
+    </view>
+    <view class="input-group">
+      <picker mode="selector" range="{{listType2}}" bindchange="selectType">
+        <view class="picker">
+          {{selectedType ? selectedType : '请选择'}}
+        </view>
+      </picker>
+    </view>
+    <button bindtap="addRecord">添加记录</button>
+  </view>
+</view>

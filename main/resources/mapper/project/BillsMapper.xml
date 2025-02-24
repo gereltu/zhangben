@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.project.mapper.BillsMapper">
+    
+    <resultMap type="Bills" id="BillsResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="type"    column="type"    />
+        <result property="amount"    column="amount"    />
+        <result property="status"    column="status"    />
+        <result property="tradeType"    column="trade_type"    />
+        <result property="recordDate"    column="record_date"    />
+    </resultMap>
+
+    <sql id="selectBillsVo">
+        select id, user_id, type, amount, status, trade_type, record_date from bills
+    </sql>
+
+    <select id="selectBillsList" parameterType="Bills" resultMap="BillsResult">
+        <include refid="selectBillsVo"/>
+        <where>  
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="amount != null  and amount != ''"> and amount = #{amount}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="tradeType != null  and tradeType != ''"> and trade_type = #{tradeType}</if>
+            <if test="recordDate != null  and recordDate != ''"> and record_date = #{recordDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectBillsById" parameterType="Long" resultMap="BillsResult">
+        <include refid="selectBillsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBills" parameterType="Bills" useGeneratedKeys="true" keyProperty="id">
+        insert into bills
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="type != null">type,</if>
+            <if test="amount != null">amount,</if>
+            <if test="status != null">status,</if>
+            <if test="tradeType != null">trade_type,</if>
+            <if test="recordDate != null">record_date,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId},</if>
+            <if test="type != null">#{type},</if>
+            <if test="amount != null">#{amount},</if>
+            <if test="status != null">#{status},</if>
+            <if test="tradeType != null">#{tradeType},</if>
+            <if test="recordDate != null">#{recordDate},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBills" parameterType="Bills">
+        update bills
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="amount != null">amount = #{amount},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="tradeType != null">trade_type = #{tradeType},</if>
+            <if test="recordDate != null">record_date = #{recordDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBillsById" parameterType="Long">
+        delete from bills where id = #{id}
+    </delete>
+
+    <delete id="deleteBillsByIds" parameterType="String">
+        delete from bills where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

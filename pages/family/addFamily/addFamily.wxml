@@ -1,0 +1,26 @@
+<!--pages/family/addFamily/addFamily.wxml-->
+<!-- 创建家庭组页面 createFamily.wxml -->
+<view class="container1">
+  <!-- 头部 -->
+  <view class="family-header">创建家庭组</view>
+  
+  <!-- 创建表单 -->
+  <view class="form-container">
+    <van-field
+      label="家庭组名称"
+      placeholder="请输入家庭组名称"
+      value="{{familyName}}"
+      bind:change="onNameChange"
+    />
+
+    
+    <van-button 
+      type="primary" 
+      block 
+      bind:click="createFamily"
+      loading="{{loading}}"
+    >
+      立即创建
+    </van-button>
+  </view>
+</view>

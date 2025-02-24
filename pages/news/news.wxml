@@ -1,0 +1,24 @@
+<view class="recordsFont">消费记录提醒</view>
+<view class="recordsContainer">
+<view style="height: 30rpx;">
+  
+</view>
+  <view class="records" wx:for="{{billsList}}" wx:key="index">
+    <view class="recordItem">
+      <text class="recordValue type">{{item.type}}</text>
+    </view>
+    <view class="recordItem">
+      <text class="recordValue tradeType">{{item.tradeType}}</text>
+    </view>
+    <view class="recordItem">
+      <text class="recordValue amount">￥{{item.amount}}</text>
+    </view>
+    <view class="recordItem">
+      <text class="recordValue recordDate">日期：{{item.recordDate}}</text>
+    </view>
+  </view>
+
+  <view style="height: 30rpx;">
+  
+</view>
+</view>

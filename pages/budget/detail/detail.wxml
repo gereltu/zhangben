@@ -1,0 +1,16 @@
+<view class="add-record">
+  <view class="title">添加预算</view>
+  <view class="input-group">
+    <input placeholder="请输入金额" value="{{amount}}" bindinput="inputAmount" />
+  </view>
+  <view class="input-group">
+    <picker mode="selector" range="{{listType}}" range-key="type" bindchange="selectType">
+      <view class="picker">
+        {{selectedType ? selectedType.type : '请选择'}}
+      </view>
+    </picker>
+  </view>
+  <button bindtap="addBudget">添加记录</button>
+</view>
+
+

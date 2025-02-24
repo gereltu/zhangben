@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<view class="background">
+<view style="font-size: 40rpx;font-weight: bold;display: flex;justify-content: center;align-items: center;">
+  {{keyword}}注册
+</view>
+
+    <view class="first">
+        <input id='account' placeholder="请输入{{keyword}}" placeholder-class="plas" type="text" class="inputs" bindinput="accountInput" />
+    </view>
+    <view class="second">
+        <input id='pwd' placeholder="请输入密码" placeholder-class="plas" type="password" class="inputs" bindinput=passwordInput" />
+    </view>
+    <view class="second">
+        <input id='pwdc' placeholder="请再次输入密码" placeholder-class="plas" type="password" class="inputs" bindinput=passwordInput2" />
+    </view>
+    <view id='btn' class="click" bindtap='signin'>注册</view>
+    <view class="cha">
+        <text class="no" bindtap="phone">手机号注册</text>
+        <text class="no" style="margin-left: 80rpx;" bindtap="email">邮箱注册</text>
+        <text class="no"  style="margin-left: 80rpx;" bindtap="regist">已有账号？点我登录</text>
+    </view>
+
+ 
+</view>

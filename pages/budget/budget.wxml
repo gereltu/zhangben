@@ -1,0 +1,16 @@
+<!--pages/budget/budget.wxml-->
+<view class="container">
+  <view class="header">我的预算</view>
+  <view wx:for="{{budgetList}}" wx:key="index">
+    <van-cell title="{{item.type}}">{{item.amount}}元</van-cell>
+  </view>
+  <van-cell>总支出：{{totalExpenses}}元</van-cell>
+  <van-cell>总预算：{{totalBudget}}元</van-cell>
+  <van-cell>预算剩余：{{total}}</van-cell>
+  <view wx:if="{{total<0 && budgetList.lenght<0}}" class="over-budget">预算超出！！！！！！！</view>
+  <view class="kefu">
+    <button class="btn" bindtap="buttonClick">1</button>
+    <image src="../../images/jia.png" mode="aspectFill" class="pic" />
+    <view class="line"></view>
+  </view>
+</view>

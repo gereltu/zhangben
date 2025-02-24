@@ -1,0 +1,101 @@
+卷 新加卷 的文件夹 PATH 列表
+卷序列号为 A224-3893
+D:.
+│  微信小程序目录树.txt
+│  
+├─annual
+│      annual.js
+│      annual.json
+│      annual.wxml
+│      annual.wxss
+│      
+├─budget
+│  │  budget.js
+│  │  budget.json
+│  │  budget.wxml
+│  │  budget.wxss
+│  │  
+│  └─detail
+│          detail.js
+│          detail.json
+│          detail.wxml
+│          detail.wxss
+│          
+├─counts
+│      counts.js
+│      counts.json
+│      counts.wxml
+│      counts.wxss
+│      
+├─expenses
+│      expenses.js
+│      expenses.json
+│      expenses.wxml
+│      expenses.wxss
+│      
+├─family
+│  │  family.js
+│  │  family.json
+│  │  family.wxml
+│  │  family.wxss
+│  │  
+│  ├─addFamily
+│  │      addFamily.js
+│  │      addFamily.json
+│  │      addFamily.wxml
+│  │      addFamily.wxss
+│  │      
+│  ├─familyDetail
+│  │      familyDetail.js
+│  │      familyDetail.json
+│  │      familyDetail.wxml
+│  │      familyDetail.wxss
+│  │      
+│  └─finance
+│          finance.js
+│          finance.json
+│          finance.wxml
+│          finance.wxss
+│          
+├─finance
+│      finance.js
+│      finance.json
+│      finance.wxml
+│      finance.wxss
+│      
+├─index
+│      index.js
+│      index.json
+│      index.wxml
+│      index.wxss
+│      
+├─login
+│      login.js
+│      login.json
+│      login.wxml
+│      login.wxss
+│      
+├─news
+│      news.js
+│      news.json
+│      news.wxml
+│      news.wxss
+│      
+├─register
+│      register.js
+│      register.json
+│      register.wxml
+│      register.wxss
+│      
+└─user
+    │  user.js
+    │  user.json
+    │  user.wxml
+    │  user.wxss
+    │  
+    └─userDetail
+            userDetail.js
+            userDetail.json
+            userDetail.wxml
+            userDetail.wxss
+            

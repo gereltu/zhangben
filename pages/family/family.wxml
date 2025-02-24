@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="header">家庭组收支统计</view>
+  <button bindtap="toggleType">{{ isExpense ? '支出' : '收入' }}</button>
+  <view class="table">
+    <van-cell title="家庭组">{{currentFamily.familyName}}</van-cell>
+    <view class="table-row table-header">
+      <view class="table-cell">日期</view>
+      <view class="table-cell">类型</view>
+      <view class="table-cell">金额</view>
+      <view class="table-cell">备注</view>
+      <view class="table-cell">成员</view>
+    </view>
+    <view class="table-row" wx:for="{{currentList}}" wx:key="index">
+      <view class="table-cell">{{item.recordDate}}</view>
+      <view class="table-cell">{{item.tradeType}}</view>
+      <view class="table-cell">{{item.amount}}￥</view>
+      <view class="table-cell">{{item.type}}</view>
+      <view class="table-cell">{{item.userName}}</view>
+    </view>
+  </view>
+
+  <van-cell wx:if="{{isExpense}}" title="消费类型统计："></van-cell>
+  <view class="list-type-summary" wx:if="{{isExpense}}">
+    <van-cell title="{{item.type}}" wx:for="{{expenseListType}}" wx:key="type">
+      消费总和: {{item.total}}￥
+    </van-cell>
+  </view>
+
+  <van-cell wx:if="{{!isExpense}}" title="收入类型统计："></van-cell>
+  <view class="list-type-summary" wx:if="{{!isExpense}}">
+    <van-cell title="{{item.type}}" wx:for="{{incomeListType}}" wx:key="type">
+      收入总和: {{item.total}}￥
+    </van-cell>
+  </view>
+
+</view>

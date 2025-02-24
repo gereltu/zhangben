@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+<view class='userinfo' bind:tap="userinfo">
+  <view class='userinfo-avatar'>
+    <image src="{{userList.userPic}}" mode="aspectFill" class="touxiang"  bindtap='login' />
+  </view>
+  <view class="youbian">
+    <view style="display: flex;">
+      <view class='userinfo-name'>
+        {{userList.userNickname}}
+      </view>
+    </view>
+    <view class='userinfo-name2'>
+      {{phone}}
+    </view>
+  </view>
+</view>
+
+<view class='list-cont'>
+  <view class='my-menu'>
+
+    <view class='memu-item' bindtap='gotoUsers'>
+      <view class="i-name">
+        <text>个人中心</text>
+      </view>
+      <view class='arrowhead'></view>
+    </view>
+
+    <view class='memu-item' bindtap='gotoFamily'>
+      <view class="i-name">
+        <text>我的家庭</text>
+      </view>
+      <view class='arrowhead'></view>
+    </view>
+
+    <view class='memu-item' bindtap='gotoFinance'>
+      <view class="i-name">
+        <text>财务分析</text>
+      </view>
+      <view class='arrowhead'></view>
+    </view>
+
+    <view class='memu-item' bindtap='gotoNews'>
+      <view class="i-name">
+        <text>我的消费</text>
+      </view>
+      <view class='arrowhead'></view>
+    </view>
+
+    <view class='memu-item' bindtap='logout'>
+      <view class="i-name">
+        <text>退出登录</text>
+      </view>
+      <view class='arrowhead'></view>
+    </view>
+
+  </view>
+</view>
+

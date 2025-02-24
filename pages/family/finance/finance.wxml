@@ -1,0 +1,18 @@
+<!-- pages/family/family.wxml -->
+<view class="chart-container">
+  <ec-canvas 
+    id="family-chart"
+    canvas-id="family-chart"  
+    ec="{{ec}}"
+    class="chart"
+  ></ec-canvas>
+  
+  <button 
+    type="primary" 
+    size="mini" 
+    style="position: absolute; top: 20rpx; right: 20rpx;"
+    bindtap="toggleType"
+  >
+    {{isExpense ? '显示收入' : '显示支出'}}
+  </button>
+</view>

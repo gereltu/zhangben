@@ -1,0 +1,21 @@
+<view class="container1">
+  <view class="header">个人中心</view>
+  
+  <!-- 头像 -->
+  <view class="avatar-container">
+    <image src="{{userList.userPic}}" mode="aspectFill" class="avatar" bindtap="chooseAvatar" />
+    <text class="avatar-hint">点击更换头像</text>
+  </view>
+
+  <!-- 输入框 -->
+  <view class="input-container">
+    <input type="text" placeholder="请输入昵称" value="{{userList.userNickname}}" bindinput="onInputChange" data-key="userNickname" class="input" />
+    <input type="text" placeholder="请输入电话" value="{{userList.userPhone}}" bindinput="onInputChange" data-key="userPhone" class="input" />
+    <input type="email" placeholder="请输入邮箱" value="{{userList.userEmail}}" bindinput="onInputChange" data-key="userEmail" class="input" />
+  </view>
+
+  <!-- 保存按钮 -->
+  <button bindtap="saveChanges" class="save-button">保存修改</button>
+</view>
+
+

@@ -1,0 +1,100 @@
+卷 新加卷 的文件夹 PATH 列表
+卷序列号为 A224-3893
+D:.
+│  App.vue
+│  main.js
+│  管理员端代码目录树.txt
+│  
+├─api
+│  └─project
+│          bills.js
+│          budgets.js
+│          family.js
+│          type.js
+│          user.js
+│          
+├─assets
+│  │  bg3.png
+│  │  loginbg.png
+│  │  loginbg2.png
+│  │  logo.png
+│  │  sss.png
+│  │  xxx.png
+│  │  
+│  ├─logo
+│  │      userimg.png
+│  │      
+│  └─test
+│          1.gif
+│          2.gif
+│          3.gif
+│          4.gif
+│          5.gif
+│          6.gif
+│          7.gif
+│          
+├─components
+│  ├─FileUpload
+│  │      index.vue
+│  │      
+│  ├─ImageUpload
+│  │      index.vue
+│  │      
+│  ├─MenuComponent
+│  │      index.vue
+│  │      
+│  └─VerificationCode
+│          index.vue
+│          sIdentify.vue
+│          
+├─layouts
+│  │  index.vue
+│  │  
+│  └─components
+│      │  AppContent.vue
+│      │  HeaderNav.vue
+│      │  
+│      └─ElMenu
+│              index.vue
+│              MenuItem.vue
+│              MenuLink.vue
+│              
+├─router
+│      index.js
+│      
+├─utils
+│      baseurl.js
+│      http.js
+│      request.js
+│      
+└─views
+    ├─bills
+    │      index.vue
+    │      
+    ├─budgets
+    │      index.vue
+    │      
+    ├─family
+    │      index.vue
+    │      
+    ├─finance
+    │      index.vue
+    │      
+    ├─home
+    │      index.vue
+    │      
+    ├─login
+    │      index.vue
+    │      
+    ├─prediction
+    │      index.vue
+    │      
+    ├─register
+    │      index.vue
+    │      
+    ├─type
+    │      index.vue
+    │      
+    └─user
+            index.vue
+            

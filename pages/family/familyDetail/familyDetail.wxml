@@ -1,0 +1,40 @@
+<!--pages/family/familyDetail/familyDetail.wxml-->
+<view class="container1">
+  <view class="family-header">我的家庭</view>
+  <view wx:for="{{list}}" wx:key="id" class="family-card">
+    <view class="family-title" style="display: flex; justify-content: space-between; align-items: center;">{{item.familyName}}
+      <van-button type="warning" bind:click="gotoFinance" size="small" data-familyid="{{item.id}}">
+        财务分析
+      </van-button>
+    </view>
+    <view class="member-list">
+      <text>成员：</text>
+      <block wx:if="{{item.users}}">
+        <view wx:for="{{item.users}}" wx:key="id" class="member-item">
+          <image src="{{item.userPic}}" mode="aspectFill" style="width: 60rpx; height: 60rpx;" />
+          {{item.userNickname}}
+        </view>
+      </block>
+      <text wx:else class="loading-text">加载中...</text>
+    </view>
+    <view class="card-footer" style="display: flex; justify-content: space-between; align-items: center;">
+      <view class="invite-code">邀请码: {{item.inviteCode}}</view>
+      <van-button type="primary" bind:click="gotoAnnual" size="small" data-familyid="{{item.id}}">
+        查看家庭收支统计
+      </van-button>
+      <van-button type="danger" size="small" bindtap="handleLeaveFamily" data-familyid="{{item.id}}">退出家庭</van-button>
+    </view>
+
+  </view>
+
+  <view class="join-section">
+    <input class="invite-input" placeholder="输入邀请码" bindinput="onInputInviteCode" value="{{inviteCode}}" />
+    <button class="join-btn" bindtap="handleJoinFamily" hover-class="btn-hover">加入家庭</button>
+  </view>
+
+  <view class="kefu">
+    <button class="btn" bindtap="gotoAddFamily">1</button>
+    <image src="../../../images/jia.png" mode="aspectFill" class="pic" />
+    <view class="line"></view>
+  </view>
+</view>

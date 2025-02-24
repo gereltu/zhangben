@@ -1,0 +1,65 @@
+/* pages/budget/detail/detail.wxss */
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 40rpx;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+
+.input-group input:focus {
+  border-color: #07c160;
+  outline: none;
+}
+
+.add-record {
+  background-color: rgb(99, 218, 118);
+  padding: 40rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.picker {
+  padding: 20rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  color: rgb(11, 15, 230);
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.picker:active {
+  background-color: #f1f1f1;
+}
+
+button {
+  width: 100%;
+  padding: 15rpx;
+  background-color: #ffffff;
+  color: rgb(214, 153, 20);
+  border: none;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+button:active {
+  background-color: #05a050;
+}

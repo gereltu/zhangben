@@ -1,0 +1,19 @@
+
+<!-- 在表格上方添加图表容器 -->
+<view class="chart-container">
+  <ec-canvas 
+    id="mychart" 
+    canvas-id="mychart" 
+    ec="{{ ec }}" 
+  ></ec-canvas>
+</view>
+
+<view class="toggle-container">
+  <van-button 
+    type="primary" 
+    size="small" 
+    bind:tap="toggleType"
+  >
+    {{isExpense ? '显示收入' : '显示支出'}}
+  </van-button>
+</view>

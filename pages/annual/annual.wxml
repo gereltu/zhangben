@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="header">统计每年收支台账</view>
+  <picker class="month-picker" mode="date" fields="year" value="{{selectedYear}}" bind:change="handleYearChange">
+    选择年份: {{selectedYear}}
+  </picker>
+  <view class="table">
+    <view class="table-row table-header">
+      <view class="table-cell">日期</view>
+      <view class="table-cell">类型</view>
+      <view class="table-cell">金额</view>
+      <view class="table-cell">备注</view>
+    </view>
+    <view class="table-row" wx:for="{{filteredList}}" wx:key="index">
+      <view class="table-cell">{{item.recordDate}}</view>
+      <view class="table-cell">{{item.tradeType}}</view>
+      <view class="table-cell">{{item.amount}}</view>
+      <view class="table-cell">{{item.type}}</view>
+    </view>
+  </view>
+
+  <van-cell>年总支出：{{totalExpenses}}</van-cell>
+  <van-cell>年总收入：{{totalIncome}}</van-cell>
+  <van-cell>总交易笔数：{{countBills}}</van-cell>
+  <view>
+    <van-cell title="最大交易笔数："></van-cell>
+    <van-cell>{{maxBills.recordDate}}--{{maxBills.tradeType}}--{{maxBills.amount}}元--{{maxBills.type}}</van-cell>
+  </view>
+  <van-cell title="消费类型统计："></van-cell>
+  <view class="list-type-summary">
+    <van-cell title="{{item.type}}" wx:for="{{listType}}" wx:key="type">
+      消费总和: {{item.total}}
+    </van-cell>
+  </view>
+
+
+</view>

@@ -1,0 +1,34 @@
+<!--pages/index/index.wxml-->
+<view class="banner">
+  <swiper previous-margin="30rpx" circular autoplay interval="3000" indicator-dots indicator-active-color="#BDA066" indicator-color="rgba(255,255,255,0.3)" style="height: 460rpx;">
+    <swiper-item wx:for="{{banner}}" wx:key="index">
+      <image src="{{item.bannerPic}}" mode="" class="pics" />
+    </swiper-item>
+  </swiper>
+  <view class="container">
+    <view class="bill-list">
+      <picker mode="date" fields="day" value="{{selectedDate}}" bindchange="handleDateChange">
+        <view class="month-picker">选择日期: {{selectedDate}}</view>
+      </picker>
+      <view class="filter-buttons">
+        <view bindtap="showExpense" style="background-color: rgb(51, 204, 89);padding: 10rpx 40rpx;border-radius: 20rpx;color: #fff;">
+          支出
+        </view>
+        <view bindtap="showIncome" style="background-color: rgb(51, 204, 89);padding: 10rpx 40rpx;border-radius: 20rpx;color: #fff;margin-left: 50rpx;">
+          收入
+        </view>
+        <!-- <button bindtap="showExpense">支出</button>
+        <button bindtap="showIncome">收入</button> -->
+      </view>
+      <view class="header">今日记录</view>
+      <view class="bill-item" wx:for="{{currentList}}" wx:key="index">
+        <view class="bill-type">{{item.type}}</view>
+        <view class="bill-amount">{{item.amount}}￥</view>
+        <view class="bill-date">{{item.recordDate}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
